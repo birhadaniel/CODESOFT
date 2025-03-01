@@ -1,0 +1,100 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+:root {
+    --calculator-bg: #1a1a1a;
+    --display-bg: #2d2d2d;
+    --button-dark: #4d4d4d;
+    --button-gray: #a6a6a6;
+    --button-orange: #ff9500;
+    --button-hover-orange: #ffaa33;
+    --text-dark: #e6e6e6;
+    --text-light: #ffffff;
+    --shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #030963 0%, #0a0a2e 100%);
+}
+.calculator{
+    background: var(--calculator-bg);
+    padding: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow);
+    transform: translateZ(0);
+}
+
+.result{
+    width: 300px;
+    height: 80px;
+    padding: 10px;
+    margin: 30px 20px;
+    color: var(--text-light);
+    background: var(--display-bg);
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 35px;
+    font-weight: 300;
+}
+.result:focus {
+    outline: 2px solid var(--button-orange);
+    outline-offset: 2px;
+}
+.calculator_item{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 15px;
+    padding-left: 25px;
+}
+.calculator_item button{
+    width: 60px;
+    height: 60px;
+    border: none;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.calculator_item button:active {
+    transform: scale(0.92);
+}
+.gray{
+    background: var(--button-gray);
+    color: var(--text-light);
+}
+.gray:hover {
+    background: #928f8f;
+}
+
+.yellow{
+    background: var(--button-orange);
+    color: var(--text-light);
+}
+.yellow:hover {
+    background: var(--button-hover-orange);
+}
+.dark{
+    background: var(--button-dark);
+    color: var(--text-dark);
+}
+.dark:hover {
+    background: #5e5e5e;
+}
+
+/* Animation */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.92); }
+    100% { transform: scale(1); }
+}
+
+
+
