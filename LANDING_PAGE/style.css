@@ -1,0 +1,647 @@
+  /* General body styling */
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000cc;
+    padding: 15px 5%;
+    position: fixed;
+    width: 90%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #0066B1;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #0066B1;
+}
+
+.navbar .logo {
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: #0066B1;
+}
+
+/* Scroll Effect on Navbar */
+.navbar.scrolled {
+    background-color: #0f073ff2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 180px 20px 100px;
+    background: linear-gradient(#0e0b1199, #08030c99), 
+    url('images/home.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    position: relative;
+    min-height: 70vh;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #0066B1;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 20px 10px 0;
+    transition: background 0.3s, transform 0.3s;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #0066B1;
+}
+
+.hero .cta-button:hover {
+    background: transparent;
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+.hero .cta-button.secondary {
+    background: transparent;
+    border: 2px solid white;
+}
+
+.hero .cta-button.secondary:hover {
+    background: white;
+    color: #0066B1;
+}
+
+.hero .animated-text {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+.hero .sub-text {
+    font-size: 1.4em;
+    margin-top: 15px;
+    color: #f7f7f7;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* About Section */
+.about, .features, .testimonials, .cta, .vehicle-lineup, .technology, 
+.promotions, .service {
+    padding: 80px 5%;
+    text-align: center;
+    background: white;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 45%;
+    margin-right: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.about-text h3 {
+    font-size: 1.8em;
+    color: #0066B1;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.05em;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+/* Vehicle Lineup Section */
+
+.vehicle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.vehicle-card {
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-image {
+    height: 180px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #777;
+}
+.vehicle-image img{
+    width: 100%;
+    object-fit: cover;
+}
+.vehicle-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.vehicle-title {
+    font-size: 1.3em;
+    margin-top: 0;
+    color: #0066B1;
+}
+
+.vehicle-desc {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.vehicle-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #0066B1;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.vehicle-link:hover {
+    background: #004e8c;
+}
+
+/* Technology Section */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tech-item {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    
+}
+.tech-item:hover{
+    transform: translateY(-10px);
+}
+
+.tech-item h3 {
+    color: #0066B1;
+    margin-top: 0;
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #0066B1;
+}
+
+/* Testimonials Section */
+.testimonial-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial {
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    position: relative;
+}
+
+.testimonial:before {
+    content: '"';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 3em;
+    color: #0066B1;
+    opacity: 0.2;
+}
+.testimonial img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 30%;
+}
+
+.testimonial p {
+    margin-top: 0;
+    font-style: italic;
+    font-size: 15px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #0066B1;
+}
+
+/* Promotions Section */
+.promo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.promo-card {
+    width: 300px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.promo-image {
+    height: 150px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+}
+.promo-image img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.promo-details {
+    padding: 20px;
+}
+.promo-title {
+    color: #0066B1;
+    margin-top: 10px;
+}
+
+/* Service Section */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    padding: 25px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-icon {
+    font-size: 2em;
+    color: #0066B1;
+    margin-bottom: 15px;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #0066B1;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background 0.3s, transform 0.3s;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #004e8c;
+    transform: translateY(-3px);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 5%;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #0066B1;
+}
+
+/* Footer Section */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: #0066B1;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #0066B1;
+}
+.copyright {
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+}
+
+.copyright a {
+    color: #0066B1;
+    text-decoration: none;
+}
+
+/* Responsive for Screens Smaller than 768px */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    .navbar .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 150px 20px 80px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .cta-button {
+        padding: 12px 25px;
+        margin: 10px 5px 0;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+    
+}
+
+/* Responsive for Screens Smaller than 480px */
+@media (max-width: 480px) {
+    .navbar .logo {
+        font-size: 1.4em;
+    }
+
+    .nav-links {
+        display: none;
+    }
+    .hero {
+        padding: 130px 15px 70px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .sub-text {
+        font-size: 1.1em;
+    }
+
+    .feature-box, .tech-item, .testimonial, .promo-card, .service-item {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .tech-grid, .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-tab {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h2:after {
+        width: 60px;
+    }
+}
